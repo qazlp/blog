@@ -2,6 +2,27 @@
 <html> 
 	<head>
 		<title>Basic information</title> 
+		<style> 
+			#panel {
+				background-color: blue;	
+				display: none;
+			}
+		</style>
+		<script> 
+			function togglePanel(){
+				let panel = document.getElementById("panel");
+				let display = panel.style.display;
+				let len = display.length;
+
+				if(display == 'none' || len == 0){
+					newDisplay = 'block';
+				}
+				else{
+					newDisplay = 'none';
+				}
+				panel.style.display = newDisplay; 
+			}
+		</script>
 	<head/>
 	<body> 
 		<nav>
@@ -22,12 +43,15 @@
 		</aside>
 		<section> 	
 			<div>
-				<img src="/" width="200" height="100" alt="photo">
-			</div>	
-			<div>
-				<p> 
-					Basic information about blog. 
-				</p>
+				<button id="but" onclick="togglePanel()">Start</button>
+				<div id="panel">
+					<p> 
+						Basic information about blog. 
+					</p>
+					<div>
+						<img src="/" width="200" height="100" alt="photo">
+					</div>	
+				</div>
 			</div>
 		</section> 
 	</body>
